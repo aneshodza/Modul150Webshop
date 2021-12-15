@@ -1,12 +1,14 @@
 import { Container, Nav, Navbar } from "react-bootstrap"
+import Logo from "../images/ski-logo.svg"
+import "../Styles/Header.css"
 
-export default function NavBar(props) {
+export default function Header(props) {
     return (
         <Navbar bg="light" expand="sm">
             <Container>
-                <Navbar.Brand>RentARoom</Navbar.Brand>
+                <Navbar.Brand><img src={Logo} alt="You Ski Logo" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav" >
+                <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                     <Nav className="me-auto">
                         <Nav.Link href="/" style={props.active === 0 ? {color: 'black'} : {color: undefined}}>Home</Nav.Link>
                         <Nav.Link href="/about" style={props.active === 1 ? {color: 'black'} : {color: undefined}}>About</Nav.Link>

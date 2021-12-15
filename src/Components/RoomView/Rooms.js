@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import RoomIcon from './RoomIcon';
 import Loading from '../Other/Loading';
-import NavBar from '../Navbar';
+import Header from '../Header';
 
 export default function Rooms() {
 
@@ -22,7 +22,7 @@ export default function Rooms() {
 
     return (
         <div>
-            <NavBar active={3}/>
+            <Header active={3}/>
             { rooms.length === 0 ? <Loading /> : rooms.map(room =>
                 
                 <Link to={{

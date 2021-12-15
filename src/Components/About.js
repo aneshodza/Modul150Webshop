@@ -1,9 +1,9 @@
-import NavBar from './Navbar.js';
+import Header from './Header.js';
 
 export default function AboutUs() {
     return (
         <div>
-            <NavBar active={1}/>
+            <Header active={1}/>
             About us
         </div>
     )

@@ -1,9 +1,9 @@
-import NavBar from "./Navbar"
+import Header from "./Header"
 
 export default function Contact() {
     return (
         <div>
-            <NavBar active={2} />
+            <Header active={2} />
             Contact
         </div>
     )
