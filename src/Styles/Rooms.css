@@ -44,3 +44,12 @@ span.room-border-child {
     border: 2px solid black;
     background-color: rgb(211, 211, 211);
 }
+
+div.dropdown-menu.show {
+    border: 2px solid black;
+}
+
+a.dropdown-item {
+    font-weight: bold;
+    text-align: center;
+}

@@ -8,10 +8,12 @@ a.nav-link {
     padding-bottom: 0px;
     padding-left: 20px;
     padding-right: 20px;
+    padding: 0px !important;
+    border-bottom: 2px solid #919191;
 }
 
 a.nav-link:not(:last-child) {
-    margin-right: 20px;
+    margin-right: 36px;
 }
 
 span.navbar-brand img {
@@ -19,7 +21,7 @@ span.navbar-brand img {
     height: 30px;
 }
 
-nav.navbar.navbar-expand-sm.navbar-light.bg-light {
+nav.navbar.navbar-expand-md.navbar-light.bg-light {
     margin-top: 20px;
     margin-bottom: 50px;
     background-color: white !important;

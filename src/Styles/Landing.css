@@ -1,12 +1,12 @@
 img.landingpage-top-image {
     aspect-ratio: 2023/3596 !important;
-    width: 23vw;
+    height: calc(80vh - 57px);
     position: absolute;
 }
 
 span.landingpage-top-image-border {
     aspect-ratio: 2023/3596 !important;
-    width: 23vw;
+    height: calc(80vh - 57px);
     position: absolute;
     left: 5.8vw;
     top: calc(0.8vw + 128.72px);
@@ -21,7 +21,8 @@ div.landingpage-top-div {
 
 div.landingpage-top-text {
     width: 54vw;
-    margin-left: 28.8vw;
+    margin-left: calc(((80vh - 57px) / 3596 * 2032) + 5.8vw);
+    /* 28.8 */
 }
 
 h1.landingpage-top-title {

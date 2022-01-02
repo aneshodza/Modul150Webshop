@@ -18,7 +18,7 @@ export default function RoomIcon(props) {
                     })
             })
     }, [])
-    console.log(props)
+    
     return (
         <div className="room-icon-div">
             <img src={image} className="room-icon-image"/>

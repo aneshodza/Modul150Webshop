@@ -56,9 +56,6 @@ export default function Rooms() {
                                 cantons.map(canton => <Dropdown.Item onClick={() => filterItems(canton.name)}>{canton.name}</Dropdown.Item>)
                             }  
                         </DropdownButton>
-                        <DropdownButton id="dropdown-basic-button" title="Sort">
-                            <Dropdown.Item></Dropdown.Item>
-                        </DropdownButton>
                     </div>
                     <div className="room-list" style={{ gridTemplateRows: `${'25vw '.repeat(Math.ceil(mappedRooms.length / 3))}` }}>
                         { mappedRooms.map(room =>
