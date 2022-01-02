@@ -1,7 +1,10 @@
+import { Spinner } from "react-bootstrap"
+import "../../Styles/Loading.css"
+
 export default function Loading() {
     return (
-        <div>
-            <p>Loading...</p>
-        </div>
+        <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+        </Spinner>
     )
 }
