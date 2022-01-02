@@ -1,0 +1,28 @@
+a.room-icon {
+    border: 2px black solid;
+    text-decoration: none;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+a.room-icon:hover {
+    transform: translate(0.3vw, -0.3vw);
+}
+
+div.room-icon-div {
+    height: 100%;
+}
+
+h2.room-icon-footer {
+    color: black;
+    text-align: left;
+    font-size: 25px;
+    margin-left: 1vw;
+    font-weight: bold;
+}
+
+img.room-icon-image {
+    aspect-ratio: 3/2;
+    width: 27.6vw;
+    margin: 1vw;
+}

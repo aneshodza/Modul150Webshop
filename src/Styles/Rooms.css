@@ -1,0 +1,46 @@
+div.room-list {
+    display: grid;
+    grid-template-columns: 30vw 30vw 30vw;
+    column-gap: 2vw;
+    row-gap: 2vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    z-index: 1;
+}
+
+div.rooms-top {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5vw;
+}
+
+div.rooms-top div.dropdown:not(:last-child) {
+    margin-right: 30px;
+}
+
+button#dropdown-basic-button {
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: none;
+    margin-bottom: 20px;
+}
+
+div.room-border {
+    display: grid;
+    grid-template-columns: 30vw 30vw 30vw;
+    column-gap: 2vw;
+    row-gap: 2vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    position: absolute;
+    top: calc(1vw + 188.68px);
+    right: 0px;
+    z-index: -1;
+}
+
+span.room-border-child {
+    border: 2px solid black;
+    background-color: rgb(211, 211, 211);
+}
