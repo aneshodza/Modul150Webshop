@@ -1,5 +1,5 @@
 import { Container, Nav, Navbar } from "react-bootstrap"
-import Logo from "../images/ski-logo.svg"
+import Logo from "../images/ski-logo-no-text.png"
 import "../Styles/Header.css"
 
 export default function Header(props) {
@@ -11,11 +11,11 @@ export default function Header(props) {
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                     <Nav className="me-auto">
                         <Nav.Link href="/" style={props.active === 0 ? {color: 'black'} : {color: undefined}}>Home</Nav.Link>
-                        <Nav.Link href="/about" style={props.active === 1 ? {color: 'black'} : {color: undefined}}>About</Nav.Link>
+                        <Nav.Link href="/about" style={props.active === 1 ? {color: 'black'} : {color: undefined}}>About me</Nav.Link>
                         <Nav.Link href="/contact" style={props.active === 2 ? {color: 'black'} : {color: undefined}}>Contact</Nav.Link>
-                        <Nav.Link href="/rooms" style={props.active === 3 ? {color: 'black'} : {color: undefined}}>Rooms</Nav.Link>
+                        <Nav.Link href="/rooms" style={props.active === 3 ? {color: 'black'} : {color: undefined}}>Resorts</Nav.Link>
                     </Nav>
-                    </Navbar.Collapse>
+                </Navbar.Collapse>
             </Container>
         </Navbar>
     )

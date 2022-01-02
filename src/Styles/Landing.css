@@ -1,0 +1,35 @@
+img.landingpage-top-image {
+    aspect-ratio: 2023/3596 !important;
+    width: 23vw;
+    position: absolute;
+}
+
+span.landingpage-top-image-border {
+    aspect-ratio: 2023/3596 !important;
+    width: 23vw;
+    position: absolute;
+    left: 5.8vw;
+    top: calc(0.8vw + 128.72px);
+    border: 2px black solid;
+}
+
+div.landingpage-top-div {
+    display: flex;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+div.landingpage-top-text {
+    width: 54vw;
+    margin-left: 28.8vw;
+}
+
+h1.landingpage-top-title {
+    text-align: center;
+    width: auto;
+}
+
+p.landingpage-top-text {
+    font-size: 20px;
+    margin-top: 30px;
+}

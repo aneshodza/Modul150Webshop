@@ -6,15 +6,25 @@ a.nav-link {
     font-size: 1.3em;
     padding-top: 0px;
     padding-bottom: 0px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 a.nav-link:not(:last-child) {
-    border-right: 2px solid rgb(124, 124, 124) !important;
+    margin-right: 20px;
 }
 
 span.navbar-brand img {
-    aspect-ratio: 1/1;
-    height: 50px;
+    aspect-ratio: 292/83;
+    height: 30px;
+}
+
+nav.navbar.navbar-expand-sm.navbar-light.bg-light {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    background-color: white !important;
+}
+
+div.container {
+    background-color: white;
 }
