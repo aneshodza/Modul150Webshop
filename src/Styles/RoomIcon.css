@@ -19,6 +19,15 @@ h2.room-icon-footer {
     font-size: 23px;
     margin-left: 1vw;
     font-weight: bold;
+    margin-bottom: 0px;
+}
+
+h3.room-icon-footer-subtitle {
+    color: black;
+    text-align: left;
+    font-size: 20px;
+    margin-left: 1vw;
+    font-weight: 500;
 }
 
 img.room-icon-image {

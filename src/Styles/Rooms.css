@@ -36,7 +36,7 @@ div.room-border {
     margin-right: 3vw;
     position: absolute;
     top: calc(1vw + 188.68px);
-    right: 0px;
+    right: 1vw;
     z-index: -1;
 }
 

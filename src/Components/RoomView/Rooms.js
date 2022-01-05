@@ -47,7 +47,7 @@ export default function Rooms() {
     return (
         <div>
             <Header active={3} />
-            { mappedRooms.length === 0 ? <Loading /> :
+            { mappedRooms.length === 0 ? <Loading size={200} /> :
                 <React.Fragment>
                     <div className="rooms-top">
                         <DropdownButton id="dropdown-basic-button" title="Filter">
