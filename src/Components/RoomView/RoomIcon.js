@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react"
-import { initializeApp } from 'firebase/app';
-import { getDownloadURL, getStorage, ref, listAll } from "firebase/storage";
+import { getDownloadURL, ref, listAll } from "firebase/storage";
 import "../../Styles/RoomIcon.css"
+import { storage } from "../../firebase";
 
 export default function RoomIcon(props) {
     const [image, setImage] = useState('')
 
     useEffect(() => {
-        const firebaseConfig = JSON.parse(sessionStorage.getItem('firebaseConfig'));
-        const storage = getStorage(initializeApp(firebaseConfig));
         const reference = ref(storage, (props.room.id).toString())
         listAll(reference)
             .then(res => {

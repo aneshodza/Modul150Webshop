@@ -9,7 +9,7 @@ export default function Landing() {
             <Header active={0} />
             <div className="landing">
                 <div className="landingpage-top-div">
-                    <img src={ImageOne} className="landingpage-top-image"/>
+                    <img src={ImageOne} className="landingpage-top-image" alt="man skiing"/>
                     <span className="landingpage-top-image-border" />
                     <div className="landingpage-top-text">
                         <h1 className="landingpage-top-title">Your Ski adventure in Switzerland, easy and quick</h1>

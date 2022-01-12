@@ -1,11 +1,11 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import { getDownloadURL, getStorage, ref, listAll } from "firebase/storage";
+import { collection, getDocs } from 'firebase/firestore';
+import { getDownloadURL, ref, listAll } from "firebase/storage";
 import React, { useState, useEffect } from 'react';
 import Loading from "../Other/Loading.js"
 import Maps from '../Other/Maps.js';
 import "../../Styles/RoomInfo.css"
-import { Carousel, Button } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
+import { db, storage } from '../../firebase';
 
 export default function RoomInfo() {
     const [roomInfo, setRoomInfo] = useState();
@@ -13,20 +13,17 @@ export default function RoomInfo() {
     const [images, setImages] = useState([]);
 
     useEffect(() => {
-        const firebaseConfig = JSON.parse(sessionStorage.getItem('firebaseConfig'))
-        getDocs(collection(getFirestore(initializeApp(firebaseConfig)), 'rooms'))
+        getDocs(collection(db, 'rooms'))
             .then(data => data.docs.map(doc => doc.data()))
-            .then(data => data.find(room => room.name.toLowerCase() === decodeURIComponent(window.location.href.split('/')[window.location.href.split('/').length - 1].replace('-', ' ').toLowerCase())))
+            .then(data => data.find(room => room.name.toLowerCase().replace(' ', '-') === decodeURIComponent(window.location.href.split('/')[window.location.href.split('/').length - 1].toLowerCase())))
             .then(data => getAdditionalInfo(data))
     }, []);
 
     const getAdditionalInfo = (param) => {
+        console.log(param)
         setRoomInfo(param)
-        const firebaseConfig = JSON.parse(sessionStorage.getItem('firebaseConfig'));
-        const storage = getStorage(initializeApp(firebaseConfig));
         const reference = ref(storage, (param.id).toString())
-        const firestore = getFirestore(initializeApp(firebaseConfig));
-        getDocs(collection(firestore, 'cantons'))
+        getDocs(collection(db, 'cantons'))
             .then(data => data.docs.map(doc => doc.data()))
             .then(data => data.find(canton => canton.name === param.place))
             .then(data => setCanton(data))

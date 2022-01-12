@@ -7,15 +7,13 @@ import Loading from '../Other/Loading';
 import Header from '../Header';
 import "../../Styles/Rooms.css"
 import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { db } from '../../firebase';
 
 export default function Rooms() {
 
     const [rooms, setRooms] = useState([]);
     const [cantons, setCantons] = useState([]);
     const [mappedRooms, setMappedRooms] = useState([]);
-
-    const firebaseConfig = JSON.parse(sessionStorage.getItem('firebaseConfig'));
-    const db = getFirestore(initializeApp(firebaseConfig));
 
     useEffect(() => {
         getDocs(collection(db, 'rooms'))
@@ -38,10 +36,6 @@ export default function Rooms() {
         } else {
             setMappedRooms(rooms.filter(room => room.place.toLowerCase() === filter.toLowerCase()))
         }
-    }
-
-    const sortItems = (sort) => {
-
     }
 
     return (

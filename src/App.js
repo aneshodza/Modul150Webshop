@@ -6,19 +6,15 @@ import Rooms from './Components/RoomView/Rooms';
 import RoomInfo from './Components/RoomView/RoomInfo';
 import NotFound from './Components/Other/404';
 import Contact from './Components/Contact';
+import Login from './Components/Login';
+import Register from './Components/Register';
+import Account from './Components/Account';
+import { AuthProvider } from './Context/AuthContext';
 
 function App() {
 
-  sessionStorage.setItem('firebaseConfig', JSON.stringify({
-    apiKey: "AIzaSyBdbqoJLSoYiFIOUECteUdrpLLRuSPLtAU",
-    authDomain: "m150-shop.firebaseapp.com",
-    projectId: "m150-shop",
-    storageBucket: "m150-shop.appspot.com",
-    messagingSenderId: "147834709976",
-    appId: "1:147834709976:web:c07a3d89f716597e68f4ad"
-  }));
-
   return (
+    <AuthProvider>
     <Router>
       <Switch>
         <Route exact path="/" component={Landing} />
@@ -26,9 +22,13 @@ function App() {
         <Route exact path="/about" component={AboutUs} />
         <Route exact path="/rooms" component={Rooms} />
         <Route exact path="/rooms/:name" component={RoomInfo} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/account" component={Account} />
         <Route component={NotFound} />
       </Switch>
     </Router>
+    </AuthProvider>
   );
 }
 
