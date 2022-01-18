@@ -1,0 +1,27 @@
+div.account-content {
+    display: grid;
+    grid-template-columns: 44vw 44vw;
+    column-gap: 2vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 50px;
+}
+
+h4.account-no-reservations {
+    text-align: center;
+    margin-top: 25px;
+}
+
+div.account-div {
+    border: 2px solid black;
+    padding: 1vw;
+}
+
+div.account-div > div {
+    margin-bottom: 10px;
+}
+
+div.account-div h2 {
+    text-align: center;
+    margin-top: 25px;
+}
