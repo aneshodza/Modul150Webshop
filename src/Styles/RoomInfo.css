@@ -54,7 +54,7 @@ div.room-info-renting-right-content {
     margin-bottom: 65px;
 }
 
-input.form-control {
+div.room-info-renting input.form-control {
     width: 320px;
 }
 
@@ -69,11 +69,7 @@ button.book-button:hover {
 }
 
 button.book-button {
-    /*position to right of element*/
-    position: absolute;
-    right: 170px;
-    top: 900px;
-    color: black;
+    color: black !important;
     background-color: white !important;
     border: 2px solid black !important;
     box-shadow: none !important;

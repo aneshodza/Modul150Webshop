@@ -45,6 +45,7 @@ export default function RoomInfo() {
             console.log('User is not logged in')
         } else {
             setUserAccount({ user: JSON.parse(sessionStorage.getItem("user")), userdata: JSON.parse(sessionStorage.getItem("userdata")) })
+            setIsLoggedIn(true)
         }
         console.log(JSON.parse(sessionStorage.getItem("user")))
         console.log(JSON.parse(sessionStorage.getItem("userdata")))
@@ -159,7 +160,7 @@ export default function RoomInfo() {
                                                 Your price: {price}.-
                                             </h2>
                                         }
-                                        {!isLoggedIn ? <Button onClick={() => bookHandler()} className='book-button'>Book</Button> : <Button disabled className='book-button'>Book</Button>}
+                                        {isLoggedIn ? <Button onClick={() => bookHandler()} className='book-button'>Book</Button> : <Button disabled className='book-button'>Book</Button>}
                                     </div>
                                 </div>
                             </div>
