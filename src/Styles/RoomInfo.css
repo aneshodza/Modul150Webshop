@@ -4,5 +4,78 @@
 }
 
 div.carousel.slide {
-    width: 330px;
+    width: 660px;
+}
+div.room-info {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-bottom: 40px;
+}
+
+div.room-info-text {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+div.room-info-text h1 {
+    margin-top: 30px;
+}
+
+div.room-info-text h2 {
+    text-align: right;
+    color: grey;
+}
+
+div.room-info-text p {
+    font-size: 1.4em;
+    margin-top: 55px;
+}
+
+div.room-info-renting {
+    margin-bottom: 40px;
+}
+
+div.room-info-renting-content {
+    display: grid;
+    grid-template-columns: 32vw 64vw;
+    column-gap: calc(2vw - 60px);
+}
+
+div.room-info-renting-right {
+    display: flex;
+    flex-direction: column;
+}
+
+div.room-info-renting-right-content {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 65px;
+}
+
+input.form-control {
+    width: 320px;
+}
+
+button.book-button:focus {
+    color: black;
+    background-color: rgb(223, 223, 223) !important;
+}
+
+button.book-button:hover {
+    color: black;
+    background-color:  rgb(197, 197, 197) !important;
+}
+
+button.book-button {
+    /*position to right of element*/
+    position: absolute;
+    right: 170px;
+    top: 900px;
+    color: black;
+    background-color: white !important;
+    border: 2px solid black !important;
+    box-shadow: none !important;
+    margin-top: 10px;
 }

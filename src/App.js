@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-calendar/dist/Calendar.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import AboutUs from './Components/About';
 import Landing from './Components/Landing';

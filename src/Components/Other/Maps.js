@@ -3,12 +3,11 @@ import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 class MapContainer extends Component {
     render() {
-        console.log(this.props.pos)
         return (
             <Map
                 google = {this.props.google}
-                style={{width: "400px", height: "400px"}}
-                zoom={this.props.zoom}
+                style={{width: "calc(100vw - 60px)", height: "350px"}}
+                zoom={14}
                 initialCenter={{lat: this.props.pos.latitude, lng: this.props.pos.longitude}}
             />
         )

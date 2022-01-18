@@ -61,6 +61,16 @@ export function AuthProvider({ children }) {
             })
     }
 
+    async function createReservation(reservation, uid) {
+        console.log(reservation)
+        let tempPastBookings = await getDoc(doc(db, "reservations/", uid))
+        .then(data => {
+            return data.data()
+        })
+        tempPastBookings.reservations.push(reservation)
+        await setDoc(doc(db, "reservations/", uid), tempPastBookings)
+    }
+
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
             setCurrentUser(user)
@@ -76,7 +86,8 @@ export function AuthProvider({ children }) {
         signup,
         login,
         userdata,
-        setUserdata
+        setUserdata,
+        createReservation
     }
 
     return (
