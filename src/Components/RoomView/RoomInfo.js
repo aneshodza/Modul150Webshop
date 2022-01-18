@@ -72,9 +72,9 @@ export default function RoomInfo() {
             })
     }
 
-    const bookHandler = () => {
+    const bookHandler = async () => {
         if (datePicked !== null) {
-            createReservation({
+            let newPastBookings = await createReservation({
                 date: datePicked,
                 extraBedsheet: extraBedsheet,
                 extraFood: extraFood,
@@ -82,8 +82,15 @@ export default function RoomInfo() {
                 processName: processName,
                 processDescription: processDescription,
                 price: price,
+                houseId: roomInfo.id,
+                houseName: roomInfo.name,
             }, JSON.parse(sessionStorage.getItem("user")).uid)
-        } 
+            let tempUserAccount = userAccount
+            console.log(newPastBookings)
+            tempUserAccount.userdata.reservations = newPastBookings
+            setUserAccount(tempUserAccount)
+            sessionStorage.setItem("userdata", JSON.stringify(tempUserAccount.userdata))
+        }
     }
 
     useEffect(() => {

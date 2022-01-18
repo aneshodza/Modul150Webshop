@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Form } from "react-bootstrap";
+import { Accordion, Form } from "react-bootstrap";
 import Header from "./Header.js";
 import { useAuth } from "../Context/AuthContext"
 import { Redirect } from "react-router-dom"
@@ -38,6 +38,11 @@ export default function Account() {
         console.log({ user: JSON.parse(sessionStorage.getItem("user")), userdata: JSON.parse(sessionStorage.getItem("userdata")) })
     }, [])
 
+    const secondsToDate = (seconds) => {
+        let date = new Date(seconds * 1000)
+        return date.toDateString().slice(4)
+    }
+
     return (
         <div className="account" style={{overflowY: 'hidden'}}>
             <Header active={4}/>
@@ -73,13 +78,23 @@ export default function Account() {
                         </div>
                         <div className="account-reservations account-div">
                             <h2>Your reservations</h2>
-                            { userAccount.userdata.reservations.reservations.length <= 0 ? <h4 className="account-no-reservations">You dont have any reservations</h4> :
-                            <div>
-                                { userAccount.userdata.reservations.reservations.map(reservation => {
-                                    <p>reservation</p>
-                                })}
-                            </div>
-                            }
+                            { userAccount.userdata.reservations.reservations.length <= 0 ? <h4 className="account-no-reservations" style={{marginTop: '30px'}}>You dont have any reservations</h4> :
+                            <Accordion defaultActiveKey="0" style={{marginTop: '30px'}}>
+                                {
+                                    userAccount.userdata.reservations.reservations.map((reservation, idx) =>
+                                        <Accordion.Item eventKey={idx}>
+                                            <Accordion.Header>{reservation.processName}</Accordion.Header>
+                                            <Accordion.Body>
+                                                <p>{reservation.processDescription}</p>
+                                                <p>Price: {reservation.price}.-</p>
+                                                <p>From {secondsToDate(reservation.date[0])} to {secondsToDate(reservation.date[1])}</p>
+                                                <p>For the {reservation.houseName} resort</p>
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                    )
+                                }
+                            </Accordion>
+                        }
                         </div>
                     </div>
                 </div>

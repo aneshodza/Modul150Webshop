@@ -63,12 +63,23 @@ export function AuthProvider({ children }) {
 
     async function createReservation(reservation, uid) {
         console.log(reservation)
+        if (reservation.processName === "") {
+            reservation.processName = "Unnamed process"
+        }
+        if (reservation.processDescription === "") {
+            reservation.processDescription = "No process description"
+        }
         let tempPastBookings = await getDoc(doc(db, "reservations/", uid))
         .then(data => {
             return data.data()
         })
         tempPastBookings.reservations.push(reservation)
         await setDoc(doc(db, "reservations/", uid), tempPastBookings)
+        tempPastBookings = await getDoc(doc(db, "reservations/", uid))
+        .then(data => {
+            return data.data()
+        })
+        return tempPastBookings
     }
 
     useEffect(() => {
