@@ -9,6 +9,7 @@ import { db, storage } from '../../firebase';
 import Header from "../Header.js"
 import Calendar from 'react-calendar';
 import { useAuth } from "../../Context/AuthContext"
+import { Redirect } from "react-router-dom"
 
 
 export default function RoomInfo() {
@@ -38,6 +39,7 @@ export default function RoomInfo() {
     const [processName, setProcessName] = useState('')
     const [processDescription, setProcessDescription] = useState('')
     const [price, setPrice] = useState(0)
+    const [redirect, setRedirect] = useState(<p></p>)
     const { createReservation } = useAuth()
 
     useEffect(() => {
@@ -91,6 +93,7 @@ export default function RoomInfo() {
             tempUserAccount.userdata.reservations = newPastBookings
             setUserAccount(tempUserAccount)
             sessionStorage.setItem("userdata", JSON.stringify(tempUserAccount.userdata))
+            setRedirect(<Redirect to={{pathname: '../account'}}></Redirect>)
         }
     }
 
@@ -168,6 +171,7 @@ export default function RoomInfo() {
                         </div>
                         <Maps pos={roomInfo.coords} />
                     </div>
+                    {redirect}
                 </React.Fragment>
             }
         </div>
